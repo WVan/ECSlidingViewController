@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 
 #import "ECPercentDrivenInteractiveTransition.h"
+#import "ECSlidingConstants.h"
 
 @interface ECPercentDrivenInteractiveTransition ()
 @property (nonatomic, assign) id<UIViewControllerContextTransitioning> transitionContext;
@@ -64,6 +65,9 @@
 
 - (void)cancelInteractiveTransition {
     if (!self.isActive) return;
+    
+    UIViewController* topViewController = [self.transitionContext viewControllerForKey:ECTransitionContextTopViewControllerKey];
+    topViewController.view.frame = [self.transitionContext initialFrameForViewController:topViewController];
     
     [self.transitionContext cancelInteractiveTransition];
     
