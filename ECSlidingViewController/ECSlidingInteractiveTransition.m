@@ -73,9 +73,9 @@
                 [self.slidingViewController anchorTopViewToRightAnimated:YES];
             } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered && !isMovingRight) {
                 [self.slidingViewController anchorTopViewToLeftAnimated:YES];
-            } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredLeft) {
+            } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredLeft && isMovingRight) {
                 [self.slidingViewController resetTopViewAnimated:YES];
-            } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight) {
+            } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight && !isMovingRight) {
                 [self.slidingViewController resetTopViewAnimated:YES];
             }
             
